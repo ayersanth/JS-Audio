@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+</head>
+
+<body>
+
+	<div>Hello</div>
+
+	<div class="box1">
+		<button class="play" id="playA">play</button>
+	</div>
+	<div class="box2">
+		<button class="play" id="playB">play</button>
+	</div>
+	<div class="box1">
+		<button class="play" id="playC">play</button>
+	</div>
+
+
+<script>
+
+	init();
+
+	// Function expression
+	var createAudio = function(){
+
+		window.newAudioA = new Audio();
+		newAudioA.src = "sounds/a.wav";
+
+		window.newAudioB = new Audio();
+		newAudioB.src = "sounds/b.wav";
+
+		window.newAudioC = new Audio();
+		newAudioC.src = "sounds/c.wav";
+
+	}();
+
+	// Function Declaration
+	function init(){
+
+		var playButtonA = document.getElementById("playA");
+		playButtonA.addEventListener("click", playAudioA, false);
+
+		var playButtonB = document.getElementById("playB");
+		playButtonB.addEventListener("click", playAudioB, false);
+
+		var playButtonC = document.getElementById("playC");
+		playButtonC.addEventListener("click", playAudioC, false);
+
+	}
+
+	function playAudioA(){
+
+		newAudioA.play();
+
+	}
+
+	function playAudioB(){
+
+		newAudioB.play();
+
+	}
+
+	function playAudioC(){
+
+		newAudioC.play();
+
+	}
+
+	
+
+</script>
+</body>
+
+</html>
